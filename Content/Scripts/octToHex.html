@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="jQuery/jquery-3.1.1.js"></script>
+		<script type="text/javascript">
+
+			function octalToHex(octalValue) {
+				var HexBinaryArray = ['0000','0001','0010','0011','0100','0101','0110','0111', '1000', '1001', '1010', '1011', '1100', '1101', '1110', '1111'],
+					HexArray = ['0','1','2','3','4','5','6','7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'],
+					OctalBinaryArray = ['000','001','010','011','100','101','110','111'],
+					OctalArray = ['0','1','2','3','4','5','6','7'],					
+					
+					str = octalValue.toString(),
+					binaryValue = '';
+				for(var j = 0; j < str.length; j++){
+					binaryValue += OctalBinaryArray[OctalArray.indexOf(str.substr(j, 1))];
+				}
+	//////////////2->16
+					var hexValue = '',
+						str = binaryValue.toString();
+					while(str.length % 4 != 0) {
+						str = '0' + str;
+					}
+					for(var i = 0; i < str.length; i += 4){
+						hexValue += HexArray[HexBinaryArray.indexOf(str.substr(i, 4))]
+					}
+					hexValue = hexValue.replace(/^0+/, ''); 
+
+					console.log(hexValue);
+			}
+
+		
+		
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>
+<!-- 8>2>16 -->

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="jQuery/jquery-3.1.1.js"></script>
+		<script type="text/javascript">
+
+			function hexToOctal(hexValue) {
+			    var HexBinaryArray = ['0000','0001','0010','0011','0100','0101','0110','0111', '1000', '1001', '1010', '1011', '1100', '1101', '1110', '1111'],
+			    	HexArray = ['0','1','2','3','4','5','6','7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'],
+			    	OctalBinaryArray = ['000','001','010','011','100','101','110','111'],
+			    	OctalValues = ['0','1','2','3','4','5','6','7'],
+				////////////hex to bin
+					binaryValue = '',
+      				str = hexValue.toString(),
+      				str = str.toUpperCase();
+      			for(var j = 0; j < str.length; j++){
+      				binaryValue += HexBinaryArray[HexArray.indexOf(str.substr(j, 1))]
+      			} 
+      			///////////// bin to Octal
+      				octalValue = '',
+					str = binaryValue.toString(),
+					len = str.length;
+				while(str.length % 3 != 0) {
+					str = '0' + str ;
+				}
+				for(var j = 0, max = len; j < max; j += 3) {
+					octalValue += OctalBinaryArray.indexOf(str.substr(j, 3));
+				}
+				console.log(octalValue);
+			}
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

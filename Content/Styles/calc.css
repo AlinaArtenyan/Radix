@@ -1,0 +1,250 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+@font-face {
+	font-family: NiseBuschGardens;
+	src: url(../fonts/ContrailOne-Regular.ttf);
+}
+html, body, main {
+    width: 100%;
+    height: 100%;
+	
+    position: relative;
+}
+body {
+	background-image: url(../Imgs/a.jpg);
+	background-color: #051429;
+	background-size: cover;
+	background-repeat: no-repeat;
+	display: table;
+
+	text-align: center;
+}
+main {
+	display: table-cell;
+
+	vertical-align: middle;
+
+	margin: auto;
+}
+.logo {
+    width: 500px;
+    
+    position: relative;
+    z-index: 40;
+	bottom: 164px;
+	
+	margin: 0 auto;
+
+	animation: logo-entry 4s ease-in;
+}
+.logo:after{
+	width: 700px;
+	height: 504px;
+
+	position: absolute;
+	z-index: -1;
+	top: 96px;
+	left: -92px;
+
+	content: ' ';
+
+    background-image: url(../Imgs/mypic.png);
+    background-size: cover;
+    filter: blur(2.5px);
+
+    animation: form-entry 3s ease-in-out;
+    transition: 1s all;
+}
+h1:before {
+    width: 0;
+    height: 0;
+
+	position: absolute;
+    right: -55px;
+    top: -10px;
+	
+	content: ' ';
+	
+	border-left: 535px solid transparent;
+    border-bottom: 10px solid #2b8ec8;
+
+	animation: before-glow 2s ease-out infinite alternate;
+}
+h1:after {
+	width: 0;
+	height: 0;
+	
+	position: absolute;
+	right: -89px;
+	top: 29px;
+	
+	content: ' ';
+
+    border-left: 100px solid transparent;
+    border-top: 16px solid #2b8ec8;
+    
+	animation: after-glow 2s ease-out infinite alternate;
+    transform: rotate(-62deg);
+}
+h1 {    
+    position: absolute;
+	top: 25px;
+	
+	color: #2b8ec8;
+    font-size: 48px;
+	font-family: NiseBuschGardens;
+
+    font-weight: bold;
+    text-shadow: 0 0 10px #000, 0 0 20px #000, 0 0 30px #000, 0 0 40px #000, 0 0 50px #000, 0 0 60px #000, 0 0 70px #000;
+    
+	animation: text-glow 2s ease-out infinite alternate;
+}
+.main {
+    width: 530px;
+    height: 360px;
+   
+	position: relative;
+    z-index: 99;
+		font-family: NiseBuschGardens;
+
+    background-color: rgba(10, 120, 185, 0.77);
+	display: inline-block;
+
+    border: 7px solid #f8f5fc;
+    box-shadow: 0 0 15px #e0e6ef;
+    border-radius: 5px;
+	
+	animation: form-entry 3s ease-in-out;
+    transition: 1s all;
+}
+.main:hover {
+    border: 6px solid #ccd8d8;
+    box-shadow: 0 0 25px #f6f8ff;
+        
+	transition: 1s all ;
+}
+table {
+	z-index: 4;
+
+	margin: auto;
+	margin-top: 25px;
+	
+	animation: input-entry 3.5s ease-in; 
+}
+input {
+	width: 400px;
+	height: 40px;
+	
+	color: #051429;
+	font-size: 13px;
+	text-shadow: 0 -1px 0 #000;
+
+	border: 1px solid #444;
+    border-radius: 5px;
+    box-shadow: 0 2px 0 #000;
+    
+	background-color: rgba(219, 222, 223, 0);
+    display: block; 
+    
+    margin: 20px auto 10px; 
+}
+input:hover{
+	background-color: #408acd;
+}
+input:focus {
+	color: #efe;
+    
+    background: linear-gradient(#4a92d2, #e4e2de);
+    
+	border-color: #4a5bde;
+    box-shadow: 0 0 5px rgba(222, 223, 41, 0.81), inset 0 0 5px rgba(0, 255, 253, .1), 0 2px 0 #000;
+    outline: none;
+	
+	animation: box-glow 1s ease-out infinite alternate;
+}
+input:invalid {
+    border: 2px solid red;
+    box-shadow: 0 0 5px rgba(255, 0, 0, .2), inset 0 0 5px rgba(255, 0, 0, .1), 0 2px 0 #000;
+}
+th{
+	    font-size: 20px;
+
+}
+/*
+@keyframes logo-entry {
+  0% {
+    opacity: 0;
+  }	
+  80% {
+    opacity: 0; 
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes text-glow {
+  0% {
+    text-shadow:0 0 10px #051429, 0 0 12px #051429, 0 0 13px #051429, 0 0 14px #051429, 0 0 15px #051429, 0 0 16px #051429, 0 0 17px #051429;
+  }	
+  100% {
+    text-shadow: 0 0 2px #0a78b9, 0 0 1px #0a78b9, 0 2px 0 #0a78b9;
+  }
+}
+@keyframes input-entry {
+  0% {
+    opacity: 0;
+  }	
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes form-entry {
+  0% {
+    height:0;
+    width: 0;
+    
+	opacity: 0;   
+    
+	padding: 0;
+  }	
+  20% {
+    height: 0;
+    width: 0;
+
+	opacity: 0;  
+    
+	padding: 0; 
+  }	
+
+  40% {
+    width: 0;
+    height: 360px;
+    
+    opacity: 1 ; 
+    
+	padding: 0;
+  }
+  
+  100% {
+        width: 530px;
+    height: 360px;
+  }
+}
+@keyframes box-glow {
+  0% {
+    border-color: #00b8b6;
+    box-shadow: 0 0 5px rgba(0, 255, 253, .2), inset 0 0 5px rgba(0, 255, 253, .1), 0 2px 0 #000;
+  }	
+  100% {
+    border-color: $stark-light-blue;
+    box-shadow: 0 0 20px rgba(0, 255, 253, .6), inset 0 0 10px rgba(0, 255, 253, .4), 0 2px 0 #000;
+  }
+}
+
+
+

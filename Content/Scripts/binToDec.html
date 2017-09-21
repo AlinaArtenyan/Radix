@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="jQuery/jquery-3.1.1.js"></script>
+		<script type="text/javascript">
+			function binToDec(binValue) {
+				var decimal = 0,
+					binLen = binValue.length - 1;
+					notBinary = /[^01]/;
+				for(var i = 0; i < binValue.length; i++) {
+					if(notBinary.test(binValue[i])) {
+						alert(binValue[i] + " is not a binary number");
+						return;
+					}
+				}
+				for(var index = binLen; index >= 0; index--) {
+					decimal += parseInt(binValue[index] * Math.pow(2, binLen-index))
+				}
+				return decimal
+			}
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>

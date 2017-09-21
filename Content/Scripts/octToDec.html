@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="scripts/jQuery/jquery-3.1.1.js"></script>
+		<script type="text/javascript">
+
+			function OctalToDecimal(octalValue) {
+				var decimal = 0;
+				for(var i = octalValue.length-1; i >= 0; i--){
+					decimal += parseInt(octalValue[i]) * Math.pow(8, octalValue.length-1-i);
+				}
+				console.log(decimal);
+			}	
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>
